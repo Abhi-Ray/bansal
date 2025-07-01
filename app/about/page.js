@@ -80,29 +80,92 @@ export default function AboutPage() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative min-h-[60vh] bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 text-white overflow-hidden">
+      <section className="relative min-h-screen bg-black text-white overflow-hidden">
+        {/* Animated Background */}
         <div className="absolute inset-0">
-          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-blue-600/20 to-purple-600/20"></div>
+          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gray-900/50 to-black/50"></div>
           <div 
-            className="absolute top-10 left-10 w-56 h-56 bg-blue-500/20 rounded-full blur-3xl animate-pulse"
+            className="absolute top-20 left-20 w-64 h-64 bg-white/5 rounded-full blur-3xl animate-pulse"
             style={{ transform: `translateY(${scrollY * 0.3}px)` }}
           ></div>
           <div 
-            className="absolute bottom-10 right-10 w-72 h-72 bg-purple-500/20 rounded-full blur-3xl animate-pulse"
+            className="absolute bottom-20 right-20 w-80 h-80 bg-white/10 rounded-full blur-3xl animate-pulse"
             style={{ transform: `translateY(${scrollY * -0.2}px)` }}
           ></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-white/5 rounded-full blur-3xl"></div>
         </div>
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center justify-center text-center pt-24 pb-12">
-          <div>
-            <h1 className="text-5xl md:text-7xl font-bold leading-tight">
-              <span className="bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
-                About Our Firm
-              </span>
-            </h1>
-            <p className="mt-6 text-xl md:text-2xl text-blue-100 font-light max-w-3xl mx-auto">
-              Discover our story, our commitment to excellence, and the values that drive us to empower your business.
-            </p>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-20">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
+            {/* Content */}
+            <div className="space-y-8">
+              <div className="space-y-6">
+                <div className="inline-block px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20">
+                  <span className="text-gray-200 text-sm font-medium">🏢 About Our Company</span>
+                </div>
+                
+                <h1 className="text-5xl md:text-7xl font-bold leading-tight">
+                  <span className="text-white">
+                    About B Bansal & Company
+                  </span>
+                </h1>
+                
+                <p className="text-xl md:text-2xl text-gray-300 font-light">
+                  Your Trusted Partner in Financial Excellence and Business Growth
+                </p>
+                
+                <p className="text-lg text-gray-400 leading-relaxed max-w-2xl">
+                  With over 15 years of expertise in accounting, auditing, and business consultancy, we are committed to delivering exceptional solutions that drive your success. Our team of seasoned professionals combines traditional values with modern innovation.
+                </p>
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link href="/contact" className="group relative px-8 py-4 bg-white text-black font-semibold rounded-xl overflow-hidden transform hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-2xl">
+                  <span className="relative z-10 flex items-center">
+                    Get In Touch
+                    <span className="ml-2 group-hover:translate-x-1 transition-transform duration-300">→</span>
+                  </span>
+                  <div className="absolute inset-0 bg-gray-900 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+                  <span className="absolute inset-0 flex items-center px-8 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    Get In Touch
+                    <span className="ml-2">→</span>
+                  </span>
+                </Link>
+                
+                <Link href="/services" className="px-8 py-4 border-2 border-white/30 text-white font-semibold rounded-xl hover:bg-white hover:text-black backdrop-blur-sm transform hover:scale-105 transition-all duration-300">
+                  View Services
+                </Link>
+              </div>
+
+              {/* Quick Stats */}
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-8">
+                {[
+                  { number: "15+", label: "Years Experience", icon: "📅" },
+                  { number: "500+", label: "Happy Clients", icon: "😊" },
+                  { number: "13+", label: "Service Areas", icon: "🛠️" },
+                  { number: "100%", label: "Satisfaction", icon: "⭐" }
+                ].map((stat, index) => (
+                  <div key={index} className="text-center group">
+                    <div className="text-2xl mb-1 grayscale">{stat.icon}</div>
+                    <div className="text-2xl font-bold text-white group-hover:text-gray-300 transition-colors duration-300">
+                      {stat.number}
+                    </div>
+                    <div className="text-sm text-gray-400">{stat.label}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Visual Element */}
+            <div className="relative">
+              <div className="w-full h-96 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20 flex items-center justify-center">
+                <div className="text-center">
+                  <div className="text-8xl mb-4 grayscale">🏢</div>
+                  <p className="text-white/70 text-lg">B Bansal & Company</p>
+                  <p className="text-white/50 text-sm">Est. 2008</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -112,10 +175,10 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
-              <div className="inline-block px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-medium mb-6">
+              <div className="inline-block px-4 py-2 bg-black text-white rounded-full text-sm font-medium mb-6">
                 📜 Our Journey
               </div>
-              <h2 className="text-4xl font-bold text-gray-900 mb-6">The Story of B Bansal & Company</h2>
+              <h2 className="text-4xl font-bold text-black mb-6">The Story of B Bansal & Company</h2>
               <p className="text-gray-600 mb-4 leading-relaxed">
                 Founded on the principles of integrity and expertise, B Bansal & Company has evolved into a cornerstone of professional accounting and business consultancy. We are dedicated to delivering comprehensive financial solutions that cater to the dynamic needs of businesses across various industries.
               </p>
@@ -125,13 +188,13 @@ export default function AboutPage() {
             </div>
             <div className="space-y-8">
               <div className="p-8 bg-gray-50 rounded-2xl shadow-sm border border-gray-100">
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Mission</h3>
+                <h3 className="text-2xl font-bold text-black mb-4">Our Mission</h3>
                 <p className="text-gray-600 leading-relaxed">
                   To provide exceptional accounting and consultancy services that empower clients to achieve their financial objectives with the highest standards of professional integrity.
                 </p>
               </div>
               <div className="p-8 bg-gray-50 rounded-2xl shadow-sm border border-gray-100">
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Vision</h3>
+                <h3 className="text-2xl font-bold text-black mb-4">Our Vision</h3>
                 <p className="text-gray-600 leading-relaxed">
                   To be the most trusted and sought-after accounting firm, recognized for our innovation, expertise, and unwavering commitment to client success.
                 </p>
@@ -145,20 +208,20 @@ export default function AboutPage() {
       <section className="py-24 bg-gradient-to-b from-gray-50 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Our Core Values</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-black mb-6">Our Core Values</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               The principles that guide our every action and decision.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {coreValues.map((value, index) => (
-              <div key={index} className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 hover:border-blue-200">
+              <div key={index} className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 hover:border-black">
                 <div className="absolute top-0 right-0 p-4 opacity-10">
-                  <span className="text-6xl">{value.icon}</span>
+                  <span className="text-6xl grayscale">{value.icon}</span>
                 </div>
                 <div className="relative">
-                  <div className="text-5xl mb-6 group-hover:scale-110 transition-transform duration-300">{value.icon}</div>
-                  <h3 className="text-xl font-bold mb-3 text-gray-900 group-hover:text-blue-900">{value.title}</h3>
+                  <div className="text-5xl mb-6 group-hover:scale-110 transition-transform duration-300 grayscale">{value.icon}</div>
+                  <h3 className="text-xl font-bold mb-3 text-black group-hover:text-gray-700">{value.title}</h3>
                   <p className="text-gray-600 leading-relaxed">{value.description}</p>
                 </div>
               </div>
@@ -168,11 +231,11 @@ export default function AboutPage() {
       </section>
 
       {/* Company Timeline */}
-      <section className="py-24 bg-gradient-to-r from-slate-900 to-blue-900 text-white">
+      <section className="py-24 bg-black text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">Our History of Growth</h2>
-            <p className="text-xl text-blue-100 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               A timeline of our journey and key milestones.
             </p>
           </div>
@@ -181,10 +244,10 @@ export default function AboutPage() {
             {timeline.map((item, index) => (
               <div key={index} className="relative flex items-center justify-between my-8">
                 <div className={`w-5/12 ${index % 2 === 0 ? 'order-1 text-right' : 'order-3 text-left'}`}>
-                  <p className="text-lg font-bold text-blue-300">{item.event}</p>
+                  <p className="text-lg font-bold text-white">{item.event}</p>
                   <p className="text-gray-300">{item.description}</p>
                 </div>
-                <div className="order-2 w-12 h-12 rounded-full bg-white/10 border-2 border-blue-300 flex items-center justify-center font-bold text-lg">
+                <div className="order-2 w-12 h-12 rounded-full bg-white/10 border-2 border-white flex items-center justify-center font-bold text-sm">
                   {item.year}
                 </div>
                 <div className="w-5/12"></div>
@@ -198,7 +261,7 @@ export default function AboutPage() {
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Meet Our Leaders</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-black mb-6">Meet Our Leaders</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               The driving force behind our success and your trusted advisors.
             </p>
@@ -206,14 +269,13 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {teamMembers.map((member, index) => (
               <div key={index} className="group text-center">
-                <div className="relative w-40 h-40 mx-auto rounded-full overflow-hidden mb-6 border-4 border-gray-100 group-hover:border-blue-200 transition-all duration-300 transform group-hover:scale-105">
-                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center">
-                    <span className="text-5xl">{member.icon}</span>
+                <div className="relative w-40 h-40 mx-auto rounded-full overflow-hidden mb-6 border-4 border-gray-100 group-hover:border-black transition-all duration-300 transform group-hover:scale-105">
+                  <div className="absolute inset-0 bg-black flex items-center justify-center">
+                    <span className="text-5xl grayscale">{member.icon}</span>
                   </div>
-                  {/* <img src={member.image} alt={member.name} className="w-full h-full object-cover" /> */}
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-1">{member.name}</h3>
-                <p className="text-blue-600 font-semibold mb-3">{member.title}</p>
+                <h3 className="text-xl font-bold text-black mb-1">{member.name}</h3>
+                <p className="text-black font-semibold mb-3">{member.title}</p>
                 <p className="text-gray-500 text-sm leading-relaxed">{member.bio}</p>
               </div>
             ))}
@@ -222,18 +284,24 @@ export default function AboutPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 bg-gradient-to-r from-blue-900 via-purple-900 to-blue-900 text-white">
+      <section className="py-24 bg-black text-white relative overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gray-900/50 to-black/50"></div>
+          <div className="absolute top-20 left-20 w-32 h-32 bg-white/10 rounded-full blur-xl animate-pulse"></div>
+          <div className="absolute bottom-20 right-20 w-40 h-40 bg-white/5 rounded-full blur-xl animate-pulse"></div>
+        </div>
+        
         <div className="relative max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <h2 className="text-5xl md:text-6xl font-bold mb-8">
-            <span className="bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
-              Ready to Grow With Us?
+            <span className="text-white">
+              Ready to Partner With Us?
             </span>
           </h2>
-          <p className="text-xl text-blue-100 mb-12 leading-relaxed">
-            Partner with a team that is as passionate about your business as you are. Let's start the conversation and build your success story together.
+          <p className="text-xl text-gray-300 mb-12 leading-relaxed">
+            Join the hundreds of businesses that trust B Bansal & Company with their financial success. Let's discuss how we can help you achieve your goals.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <Link href="/contact" className="px-12 py-4 bg-white text-blue-900 font-bold rounded-xl hover:bg-blue-50 transform hover:scale-105 transition-all duration-300 shadow-xl">
+            <Link href="/contact" className="px-12 py-4 bg-white text-black font-bold rounded-xl hover:bg-gray-100 transform hover:scale-105 transition-all duration-300 shadow-xl">
               Schedule a Consultation
             </Link>
           </div>
