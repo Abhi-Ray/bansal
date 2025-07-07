@@ -11,6 +11,7 @@ const Navbar = () => {
     { name: 'Home', href: '/' },
     { name: 'About', href: '/about' },
     { name: 'Services', href: '/services' },
+    { name: 'Knowledge Bank', href: '/knowledge' },
     { name: 'Contact', href: '/contact' },
   ]
 
@@ -33,12 +34,11 @@ const Navbar = () => {
           {/* Logo Section */}
           <Link href="/" className="flex items-center group">
             <div className="flex flex-col">
-              <span className="text-2xl font-bold tracking-tight text-white transition-colors duration-300 group-hover:text-gray-300">
-                B Bansal & Co.
-              </span>
-              <span className="text-[10px] font-medium tracking-widest uppercase text-gray-400 transition-colors duration-300 group-hover:text-gray-300">
-                Chartered Accountants
-              </span>
+              <img
+                src="/img/logo.png"
+                alt="B Bansal & Company Logo"
+                className="h-20 w-auto object-contain py-2"
+              />
             </div>
           </Link>
 

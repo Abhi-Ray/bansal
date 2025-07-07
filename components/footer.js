@@ -16,6 +16,8 @@ const Footer = () => {
     { name: "Home", href: "/" },
     { name: "About Us", href: "/about" },
     { name: "Services", href: "/services" },
+    { name: 'Knowledge Bank', href: '/knowledge' },
+
     { name: "Contact", href: "/contact" }
   ]
 
@@ -44,21 +46,16 @@ const Footer = () => {
           <div className="lg:col-span-2 group">
             <div className="relative">
               <div className="relative bg-gray-900/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-700 hover:border-gray-500 transition-all duration-300">
-                <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center mr-4 shadow-lg group-hover:shadow-xl transition-shadow duration-300">
-                    <span className="text-xl font-bold text-black">B</span>
-                  </div>
-                  <div>
-                    <h3 className="text-2xl font-bold text-white group-hover:text-gray-200 transition-colors duration-300">
-                      B Bansal & Company
-                    </h3>
-                    <p className="text-sm text-gray-400 font-medium tracking-wider">CHARTERED ACCOUNTANTS</p>
-                  </div>
+                <div className="flex flex-col sm:flex-row items-center justify-evenly mb-4 gap-4">
+                  <img
+                    src="/img/logo.png"
+                    alt="B Bansal & Company Logo"
+                    className="h-20 w-auto object-contain py-2"
+                  />
+                  <p className="text-gray-300 leading-relaxed group-hover:text-gray-200 transition-colors duration-300 flex-1 text-justify">
+                    Professional Chartered Accountants providing comprehensive financial and business solutions with excellence and integrity.
+                  </p>
                 </div>
-                
-                <p className="text-gray-300 mb-6 leading-relaxed group-hover:text-gray-200 transition-colors duration-300">
-                  Professional Chartered Accountants providing comprehensive financial and business solutions with excellence and integrity.
-                </p>
                 
                 <div className="space-y-2 text-gray-300">
                   <div className="flex items-center group/address hover:text-white transition-colors duration-300">
